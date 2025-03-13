@@ -1,6 +1,6 @@
 import { useRef, useState, useReducer} from "react"
 
-export default function BookingForm(){
+export default function BookingForm(props){
     const [date, setDate] = useState("mm/dd/yyyy");
     const [time, setTime] = useState("17:00");
     const [number, setNumber] = useState(1);
@@ -13,12 +13,13 @@ export default function BookingForm(){
                 <input type="date" id="res-date" value={date} onChange={(e) => setDate(e.target.value)}/>
                 <label htmlFor="res-time">Choose time</label>
                 <select id="res-time " value={time} onChange={(e) => setTime(e.target.value)}>
-                    <option>17:00</option>
+                    {props.times.map((value) => <option>{value}</option>)}
+                    {/* <option>17:00</option>
                     <option>18:00</option>
                     <option>19:00</option>
                     <option>20:00</option>
                     <option>21:00</option>
-                    <option>22:00</option>
+                    <option>22:00</option> */}
                 </select>
                 <label htmlFor="guests">Number of guests</label>
                 <input type="number" placeholder="1" min="1" max="10" id="guests" value={number} onChange={(e) => setNumber(e.target.value)}/>
