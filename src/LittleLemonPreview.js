@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router";
+
 export default function LittleLemonPreview(){
+    const navigate = useNavigate();
     return (
         <section className="Preview">
             <section className="ContentBlock">
@@ -6,7 +9,7 @@ export default function LittleLemonPreview(){
                     <h1>Little Lemon</h1>
                     <h2>Chicago</h2>
                     <p>Placeholder</p>
-                    <button>Reserve a table</button>
+                    <button onClick={() => navigate("/booking")}>Reserve a table</button>
                 </section>
                 <section>
                     <img href=""></img>

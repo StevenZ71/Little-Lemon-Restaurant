@@ -1,10 +1,10 @@
 import BookingForm from "./BookingForm";
 
-export default function BookingPage(){
+export default function BookingPage(props){
     return(
-        <>
+        <section className="BookingPage">
             Book now
-            <BookingForm />
-        </>
+            <BookingForm times={props.times} changeDate={props.changeDate} formSubmit={props.formSubmit}/>
+        </section>
     )
 }

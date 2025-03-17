@@ -14,9 +14,14 @@ li{
 }
 .Preview, .TestimonialsSection, .Footer{
   background-color: #495E57;
+  padding: 1vh 1vh 1vh 1vh;
 }
-.SpecialsSection, .AboutSection{
+.SpecialsSection, .AboutSection, .Form, .BookingPage{
   background-color: #F4CE14;
+  padding: 1vh 1vh 1vh 1vh;
+}
+.BookingPage{
+  text-align: center;
 }
 .ContentBlock{
   display:flex;
@@ -33,8 +38,11 @@ li{
 } */
 .Card{
   flex: 1;
+  background-color: white;
+  margin: 1vh 1vw 1vh 1vw;
 }
 form{
-   display: grid; max-width: 200px; gap: 20px;
+  display: grid; gap: 20px;
+  justify-content: center;
 }
 /* COLORS 495E57 F4CE14*/

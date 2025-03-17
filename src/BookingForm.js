@@ -1,25 +1,32 @@
 import { useRef, useState, useReducer} from "react"
+import { useNavigate } from "react-router";
 
 export default function BookingForm(props){
-    const [date, setDate] = useState("mm/dd/yyyy");
+    const [date, setDate] = useState("yyyy-MM-dd");
     const [time, setTime] = useState("17:00");
     const [number, setNumber] = useState(1);
     const [occasion, setOccasion] = useState("Birthday");
-
+    const navigate = useNavigate();
     return(
-        <>
-            <form>
+        <section className="Form">
+            <form  onSubmit={(e) => {
+                    let data = [];
+                    for(let i = 0; i < 4; i++){
+                        data.push(e.target[i].value);
+                    }
+                    props.formSubmit(data);
+                    navigate("/bookingconfirmation");
+                    e.preventDefault();
+                }}>
                 <label htmlFor="res-date">Choose date</label>
-                <input type="date" id="res-date" value={date} onChange={(e) => setDate(e.target.value)}/>
+                <input type="date" id="res-date" required="true" value={date} onChange={(e) => {
+                        setDate(e.target.value);
+                        props.changeDate(e.target.value);
+                    }
+                }/>
                 <label htmlFor="res-time">Choose time</label>
                 <select id="res-time " value={time} onChange={(e) => setTime(e.target.value)}>
                     {props.times.map((value) => <option>{value}</option>)}
-                    {/* <option>17:00</option>
-                    <option>18:00</option>
-                    <option>19:00</option>
-                    <option>20:00</option>
-                    <option>21:00</option>
-                    <option>22:00</option> */}
                 </select>
                 <label htmlFor="guests">Number of guests</label>
                 <input type="number" placeholder="1" min="1" max="10" id="guests" value={number} onChange={(e) => setNumber(e.target.value)}/>
@@ -30,6 +37,6 @@ export default function BookingForm(props){
                 </select>
                 <input type="submit" value="Make Your reservation" />
             </form>
-        </>
+        </section>
     )
 }
