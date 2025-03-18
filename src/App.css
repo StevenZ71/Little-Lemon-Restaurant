@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Markazi+Text:wght@400..700&display=swap');
+
 Header{
   display: flex;
   text-align: center;
@@ -12,16 +15,24 @@ li{
   margin-left: 1vw;
   margin-right: 1vw;
 }
-.Preview, .TestimonialsSection, .Footer{
+.Center{
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+#Preview, #TestimonialsSection, #Footer{
   background-color: #495E57;
   padding: 1vh 1vh 1vh 1vh;
 }
-.SpecialsSection, .AboutSection, .Form, .BookingPage{
+#Specials, #About, .Form, #BookingPage{
   background-color: #F4CE14;
   padding: 1vh 1vh 1vh 1vh;
 }
-.BookingPage{
-  text-align: center;
+#Copyright{
+  transform: translateY(50%);
+}
+#Order{
+  margin: 0 1vw 0 1vw;
 }
 .ContentBlock{
   display:flex;
@@ -29,20 +40,68 @@ li{
   margin-left: 15vw;
   margin-right: 15vw;
 }
-.Preview section{
+.Flex{
   flex: 1;
 }
-/* .ContentBlock{
-  display: flex;
-  justify-content: center;
-} */
+#Preview section{
+  flex: 1;
+}
 .Card{
   flex: 1;
   background-color: white;
   margin: 1vh 1vw 1vh 1vw;
 }
-form{
-  display: grid; gap: 20px;
-  justify-content: center;
+.Image{
+  max-width: 100%;
+}
+.Horizontal{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.Vertical{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  align-items: middle;
+}
+.CardText{
+  margin: 1vw 1vh;
 }
 /* COLORS 495E57 F4CE14*/
+.SubTitle{
+  font-family: Markazi;
+  text-decoration: none;
+  font-size: 40px;
+  margin: 0 0 0 0;
+}
+.CTA{
+  font-family: Markazi;
+  font-size: 18px;
+  margin: 0 0 1em 0;
+}
+.CardTitle{
+  font-family: Karla;
+  font-size: 18px;
+  text-decoration: bold;
+  margin: 0 0 0 0;
+}
+.Text{
+  font-family: Karla;
+  font-size: 16px;
+  margin: 0;
+}
+
+form{
+  display: grid;
+  gap: 20px;
+  justify-content: center;
+}
+
+button{
+  /* background-color: #F4CE14; */
+  font-family: Karla;
+  font-size: 16px;
+  text-decoration: bold;
+  border-radius: 10px;
+}
